@@ -1,0 +1,17 @@
+{
+  "buildEnabled" : true,
+  "counterEnabled" : true,
+  "enemyStatsEnabled" : true,
+  "skillTimerEnabled" : true,
+  "autoAcceptEnabled" : true,
+  "respawnTimerEnabled" : true,
+  "matchHistoryEnabled" : true,
+  "pickBanEnabled" : false,
+  "honorEnabled" : true,
+  "autoReplyEnabled" : true,
+  "lobbyFlowEnabled" : true,
+  "chatStatusEnabled" : true,
+  "autoAcceptDelaySeconds" : 0,
+  "overlayOpacity" : 0.92,
+  "sendCooldownSeconds" : 5
+}

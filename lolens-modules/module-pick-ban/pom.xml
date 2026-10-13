@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.lolens</groupId>
+        <artifactId>lolens</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>module-pick-ban</artifactId>
+    <name>LoLens Module - Pick Ban</name>
+    <description>自动选人/禁用模块：选人阶段按预设英雄列表通过 LCU 自动选择/禁用，可配置开关并展示状态。</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+    </dependencies>
+</project>

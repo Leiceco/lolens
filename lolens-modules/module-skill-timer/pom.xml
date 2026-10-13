@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.lolens</groupId>
+        <artifactId>lolens</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>module-skill-timer</artifactId>
+    <name>LoLens Module - Skill Timer</name>
+    <description>技能 CD 记录 + 一键发送模块：热键手动记录，Alt+Q 主动发送（合规重点模块）。</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna-platform</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
+</project>

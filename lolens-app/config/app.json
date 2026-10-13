@@ -1,0 +1,12 @@
+{
+  "buildEnabled" : true,
+  "counterEnabled" : true,
+  "enemyStatsEnabled" : true,
+  "skillTimerEnabled" : true,
+  "autoAcceptEnabled" : true,
+  "respawnTimerEnabled" : true,
+  "matchHistoryEnabled" : true,
+  "pickBanEnabled" : true,
+  "overlayOpacity" : 0.92,
+  "sendCooldownSeconds" : 5
+}

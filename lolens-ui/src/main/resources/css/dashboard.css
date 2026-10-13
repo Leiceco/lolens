@@ -1,0 +1,850 @@
+/* LoLens 主界面样式：LeagueAkari 深色基调 + 层次增强（阴影/分区标题/hover/统一圆角体系） */
+.root {
+    -fx-font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
+    -fx-background-color: #141416;
+}
+
+.label {
+    -fx-text-fill: rgba(255,255,255,0.86);
+}
+
+/* ===== 侧边栏（半透明深色 + 右缘细分隔线） ===== */
+.app-sidebar {
+    -fx-background-color: rgba(0,0,0,0.28);
+    -fx-border-color: transparent rgba(255,255,255,0.06) transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-pref-width: 176px;
+    -fx-min-width: 176px;
+}
+
+.sidebar-logo {
+    -fx-font-family: "Comfortaa", "Segoe UI", "Microsoft YaHei UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: rgba(255,255,255,0.92);
+}
+
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.nav-item .label {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 14px;
+}
+.nav-item:hover {
+    -fx-background-color: rgba(255,255,255,0.07);
+}
+.nav-item-active {
+    -fx-background-color: rgba(248,63,111,0.16);
+    -fx-border-color: transparent transparent transparent #f83f6f;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(248,63,111,0.18), 8, 0, 0, 0);
+}
+.nav-item-active .label {
+    -fx-text-fill: #f83f6f;
+    -fx-font-weight: bold;
+}
+.nav-item-active:hover {
+    -fx-background-color: rgba(248,63,111,0.22);
+}
+
+/* 侧栏滚动容器：透明无边框 */
+.sidebar-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.sidebar-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===== 页面滚动容器（主内容区） ===== */
+.page-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.page-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===== 卡片：半透明表面 + 投影 + 细边框，圆角统一 12 ===== */
+.card {
+    -fx-background-color: rgba(22,22,26,0.94);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 14, 0, 0, 3);
+}
+.card:hover {
+    -fx-border-color: rgba(255,255,255,0.18);
+}
+
+/* 卡片标题：左侧主色竖条 + 白色加粗 */
+.card-title {
+    -fx-text-fill: rgba(255,255,255,0.90);
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #f83f6f;
+    -fx-border-width: 0 0 0 3;
+    -fx-padding: 0 0 0 10;
+}
+
+.card-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.45);
+    -fx-font-size: 12px;
+}
+
+/* 分区标题（Build 页）：金色强调 + 底部细线 */
+.section-title {
+    -fx-text-fill: #ffc861;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 8 0;
+}
+
+/* ===== 设置行：底部分隔线 + hover 反馈 ===== */
+.settings-row {
+    -fx-border-color: transparent transparent rgba(255,255,255,0.06) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 10 8 10 8;
+    -fx-background-radius: 8;
+}
+.settings-row:hover {
+    -fx-background-color: rgba(255,255,255,0.03);
+}
+
+/* ===== 右侧信息栏（与左侧导航呼应，形成双栏层次） ===== */
+.context-panel {
+    -fx-background-color: rgba(0,0,0,0.28);
+    -fx-border-color: transparent transparent transparent rgba(255,255,255,0.06);
+    -fx-border-width: 0 0 0 1;
+    -fx-pref-width: 210px;
+    -fx-min-width: 210px;
+}
+.context-card {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 10, 0, 0, 2);
+}
+.context-title {
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.context-desc {
+    -fx-text-fill: rgba(255,255,255,0.45);
+    -fx-font-size: 12px;
+}
+.context-head {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+.context-hint-key {
+    -fx-text-fill: #f83f6f;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-min-width: 62px;
+}
+.context-hint-desc {
+    -fx-text-fill: rgba(255,255,255,0.45);
+    -fx-font-size: 11px;
+}
+
+/* ===== 按钮 ===== */
+.button {
+    -fx-background-color: #f83f6f;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 8;
+    -fx-padding: 8 20 8 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(248,63,111,0.30), 8, 0, 0, 1);
+}
+.button:hover {
+    -fx-background-color: #ff5c86;
+    -fx-effect: dropshadow(gaussian, rgba(248,63,111,0.45), 12, 0, 0, 2);
+}
+.button:pressed {
+    -fx-background-color: #e02e58;
+}
+.button:disabled {
+    -fx-opacity: 0.55;
+}
+
+/* ===== 复选框 ===== */
+.check-box {
+    -fx-text-fill: rgba(255,255,255,0.86);
+    -fx-font-size: 13px;
+}
+.check-box .box {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.check-box:hover .box {
+    -fx-border-color: rgba(255,255,255,0.28);
+}
+.check-box:selected .box {
+    -fx-background-color: #f83f6f;
+    -fx-border-color: #f83f6f;
+}
+.check-box:selected .mark {
+    -fx-background-color: #ffffff;
+}
+
+/* ===== 文本输入 ===== */
+.text-field {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: rgba(255,255,255,0.86);
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8 6 8;
+}
+.text-field:hover {
+    -fx-border-color: rgba(255,255,255,0.26);
+}
+.text-field:focused {
+    -fx-border-color: #f83f6f;
+}
+
+/* ===== 表格（战绩页） ===== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-radius: 10;
+}
+.table-view .column-header-background {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 10 10 0 0;
+}
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 12px;
+}
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.05) transparent;
+}
+.table-row-cell:odd {
+    -fx-background-color: rgba(255,255,255,0.02);
+}
+.table-row-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.05);
+}
+.table-row-cell:selected {
+    -fx-background-color: rgba(248,63,111,0.16);
+}
+.table-view .table-cell {
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-font-size: 12px;
+}
+
+/* ===== 滚动条：8px 细条 + 圆角 + hover 高亮 ===== */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+.scroll-bar:vertical {
+    -fx-pref-width: 8;
+}
+.scroll-bar:horizontal {
+    -fx-pref-height: 8;
+}
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-radius: 4;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(255,255,255,0.32);
+}
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-background-color: transparent;
+}
+.corner {
+    -fx-background-color: transparent;
+}
+
+/* ===== 页面级排版增强（新增） ===== */
+
+/* 页面大标题：主色渐变光带 + 底部细分隔线 */
+.page-title {
+    -fx-text-fill: rgba(255,255,255,0.94);
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 10 0;
+}
+
+/* 英雄名强调（Build 页） */
+.champ-text {
+    -fx-text-fill: #f83f6f;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* 数据来源状态文本 */
+.data-source-text {
+    -fx-text-fill: #f0b74a;
+    -fx-font-size: 12px;
+}
+
+/* 空数据提示 */
+.empty-text {
+    -fx-text-fill: #7a7a86;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+/* 状态标签：彩色语义 + 高亮 */
+.status-ok {
+    -fx-text-fill: #9fe8b0;
+    -fx-font-size: 12px;
+}
+.status-warn {
+    -fx-text-fill: #f0b74a;
+    -fx-font-size: 12px;
+}
+.status-error {
+    -fx-text-fill: #ff7b7b;
+    -fx-font-size: 12px;
+}
+
+/* 次级按钮：透明底 + 描边，hover 主色渐变 */
+.button-secondary {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 20 8 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.button-secondary:hover {
+    -fx-background-color: rgba(248,63,111,0.14);
+    -fx-border-color: rgba(248,63,111,0.45);
+    -fx-text-fill: #ffc9d8;
+}
+.button-secondary:pressed {
+    -fx-background-color: rgba(248,63,111,0.24);
+}
+
+/* 战绩页：页面容器与详情卡 */
+.match-page {
+    -fx-spacing: 14;
+}
+.detail-box {
+    -fx-background-color: rgba(20,20,22,0.92);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-padding: 16;
+}
+.detail-title {
+    -fx-text-fill: rgba(255,255,255,0.90);
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.team-section {
+    -fx-padding: 8 0 0 0;
+}
+.team-head {
+    -fx-text-fill: #f83f6f;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0 0 6 0;
+}
+.team-row {
+    -fx-font-size: 13px;
+    -fx-padding: 3 0 3 0;
+}
+.team-row-win {
+    -fx-text-fill: #9fe8b0;
+}
+.team-row-loss {
+    -fx-text-fill: #ff7b7b;
+}
+
+/* ===== 卡片内图文排版增强 ===== */
+
+/* 图文行：hover 时轻微提亮 */
+.info-row {
+    -fx-background-radius: 6;
+    -fx-padding: 4 6 4 6;
+}
+.info-row:hover {
+    -fx-background-color: rgba(255,255,255,0.04);
+}
+
+/* 装备/符文文本 */
+.item-text {
+    -fx-text-fill: #d8d8e0;
+    -fx-font-size: 13px;
+}
+.rune-text {
+    -fx-text-fill: #8ab4ff;
+    -fx-font-size: 13px;
+}
+.rune-name {
+    -fx-text-fill: #a0a0b0;
+    -fx-font-size: 12px;
+}
+
+/* 技能格：等级 + 技能图标 */
+.skill-level {
+    -fx-text-fill: #7a7a86;
+    -fx-font-size: 10px;
+}
+.skill-letter {
+    -fx-background-radius: 4;
+    -fx-padding: 2 6 2 6;
+}
+
+/* 空项占位文本 */
+.muted-text {
+    -fx-text-fill: #808090;
+    -fx-font-size: 12px;
+}
+
+/* ===== 分区标题增强：左侧主色竖条 + 底部细线 ===== */
+.section-title {
+    -fx-text-fill: #ffc861;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) #f83f6f;
+    -fx-border-width: 0 0 1 3;
+    -fx-padding: 0 0 8 10;
+}
+
+/* ===== 卡片顶部高光（渐变叠层） ===== */
+.card {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(255,255,255,0.045), rgba(255,255,255,0) 70px),
+        rgba(22,22,26,0.94);
+}
+
+/* ===== 导航项增强：active 渐变 + 底部高光 ===== */
+.nav-item-active {
+    -fx-background-color: linear-gradient(to right, rgba(248,63,111,0.30), rgba(248,63,111,0.10));
+}
+.nav-item:hover {
+    -fx-background-color: linear-gradient(to right, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+}
+
+/* ===== 右侧信息卡增强 ===== */
+.context-card:hover {
+    -fx-border-color: rgba(248,63,111,0.35);
+    -fx-background-color: rgba(248,63,111,0.06);
+}
+
+/* ===== 表格增强：列头 hover、单元格内边距、选中行高亮 ===== */
+.table-view .column-header:hover {
+    -fx-background-color: rgba(255,255,255,0.09);
+}
+.table-view .table-cell {
+    -fx-padding: 6 10 6 10;
+}
+.table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+.table-row-cell:filled:hover .table-cell {
+    -fx-text-fill: rgba(255,255,255,0.96);
+}
+
+/* ===== 滚动条增强：轨道 hover、thumb pressed ===== */
+.scroll-bar .track:hover {
+    -fx-background-color: rgba(255,255,255,0.04);
+}
+.scroll-bar .thumb:pressed {
+    -fx-background-color: rgba(248,63,111,0.55);
+}
+.scroll-bar .thumb {
+    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-insets: 1;
+}
+
+/* ===== 战绩页三栏式（LeagueAkari 风格） ===== */
+
+/* 左中数据面板 */
+.stats-panel {
+    -fx-pref-width: 250px;
+    -fx-min-width: 250px;
+    -fx-spacing: 12;
+}
+
+/* 召唤师信息卡 */
+.summoner-card {
+    -fx-padding: 16;
+}
+.avatar-circle {
+    -fx-background-color: linear-gradient(to bottom right, #f83f6f, #ff8fa5);
+    -fx-background-radius: 24;
+    -fx-min-width: 46px;
+    -fx-min-height: 46px;
+    -fx-pref-width: 46px;
+    -fx-pref-height: 46px;
+    -fx-max-width: 46px;
+    -fx-max-height: 46px;
+    -fx-alignment: center;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(248,63,111,0.40), 10, 0, 0, 1);
+}
+.summoner-name {
+    -fx-text-fill: rgba(255,255,255,0.94);
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+.rank-badge {
+    -fx-text-fill: #ffc861;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(255,200,97,0.10);
+    -fx-background-radius: 6;
+    -fx-padding: 3 8 3 8;
+}
+
+/* KPI 卡 */
+.kpi-card {
+    -fx-padding: 16;
+}
+.kpi-value {
+    -fx-text-fill: rgba(255,255,255,0.96);
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.kpi-title {
+    -fx-text-fill: rgba(255,255,255,0.40);
+    -fx-font-size: 11px;
+}
+
+/* 常用英雄卡 */
+.hero-card {
+    -fx-padding: 16;
+}
+.hero-stat-name {
+    -fx-text-fill: rgba(255,255,255,0.82);
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.hero-stat-val {
+    -fx-text-fill: rgba(255,255,255,0.45);
+    -fx-font-size: 12px;
+}
+
+/* 模式筛选 */
+.filter-label {
+    -fx-text-fill: rgba(255,255,255,0.55);
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.mode-filter {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: rgba(255,255,255,0.86);
+    -fx-border-color: rgba(255,255,255,0.16);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10 4 10;
+}
+.mode-filter .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255,255,255,0.86);
+}
+.mode-filter .list-view {
+    -fx-background-color: rgba(22,22,26,0.97);
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 6;
+}
+.mode-filter .list-view .list-cell:hover {
+    -fx-background-color: rgba(248,63,111,0.18);
+}
+.mode-filter .list-view .list-cell:selected {
+    -fx-background-color: rgba(248,63,111,0.30);
+}
+
+/* ===== 对局卡片流 ===== */
+
+/* 卡片底色：胜利青蓝 / 失败洋红 + 顶部渐变光晕（截图 LeagueAkari 状态色） */
+.game-card {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 16, 0, 0, 3);
+    -fx-cursor: hand;
+}
+.game-card-win {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(0,200,200,0.10), rgba(0,200,200,0) 90px),
+        rgba(20,26,30,0.94);
+    -fx-border-color: rgba(0,200,200,0.28);
+}
+.game-card-win:hover {
+    -fx-border-color: rgba(0,200,200,0.55);
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(0,200,200,0.16), rgba(0,200,200,0) 110px),
+        rgba(20,26,30,0.96);
+}
+.game-card-loss {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(220,50,100,0.10), rgba(220,50,100,0) 90px),
+        rgba(30,20,26,0.94);
+    -fx-border-color: rgba(220,50,100,0.28);
+}
+.game-card-loss:hover {
+    -fx-border-color: rgba(220,50,100,0.55);
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(220,50,100,0.16), rgba(220,50,100,0) 110px),
+        rgba(30,20,26,0.96);
+}
+
+/* 结果徽章 */
+.result-badge {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 3 10 3 10;
+}
+.result-win {
+    -fx-text-fill: #26c6da;
+    -fx-background-color: rgba(0,200,200,0.14);
+}
+.result-loss {
+    -fx-text-fill: #ff5c8a;
+    -fx-background-color: rgba(220,50,100,0.16);
+}
+
+/* 卡片元信息 */
+.card-meta {
+    -fx-text-fill: rgba(255,255,255,0.40);
+    -fx-font-size: 11px;
+}
+.card-hero-name {
+    -fx-text-fill: rgba(255,255,255,0.92);
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.card-kda {
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-font-size: 13px;
+}
+.card-detail-hint {
+    -fx-text-fill: rgba(255,255,255,0.35);
+    -fx-font-size: 11px;
+}
+
+/* 详情展开区 */
+.detail-label {
+    -fx-text-fill: rgba(255,255,255,0.45);
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-width: 36px;
+}
+.team-section {
+    -fx-padding: 8 0 0 0;
+}
+.team-champ {
+    -fx-text-fill: rgba(255,255,255,0.78);
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-width: 64px;
+}
+.team-name {
+    -fx-text-fill: rgba(255,255,255,0.58);
+    -fx-font-size: 12px;
+}
+.team-kda {
+    -fx-text-fill: rgba(255,255,255,0.62);
+    -fx-font-size: 12px;
+}
+.team-result {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ============ 战绩卡片新布局（参考截图样式：头像/胜负/技能/KDA/统计/装备/成就/元信息/队友面板） ============ */
+.game-avatar {
+    -fx-effect: dropshadow(gaussian, rgba(38,198,218,0.35), 8, 0.2, 0, 0);
+}
+.game-avatar-ring {
+    -fx-padding: 2;
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-background-radius: 999px;
+    -fx-background-insets: 0;
+}
+.avatar-ring-win {
+    -fx-border-color: rgba(38,198,218,0.85);
+    -fx-border-width: 2;
+    -fx-border-radius: 999px;
+}
+.avatar-ring-loss {
+    -fx-border-color: rgba(233,30,140,0.85);
+    -fx-border-width: 2;
+    -fx-border-radius: 999px;
+}
+.game-arrow {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(0,0,0,0.55);
+    -fx-background-radius: 999px;
+    -fx-padding: 1 3 1 3;
+}
+.result-text {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.result-text-win {
+    -fx-text-fill: #4dffa0;
+}
+.result-text-loss {
+    -fx-text-fill: #ff5d6c;
+}
+.kda-kill {
+    -fx-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.kda-death {
+    -fx-fill: #ff5d6c;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.kda-assist {
+    -fx-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.kda-sub {
+    -fx-text-fill: rgba(255,255,255,0.42);
+    -fx-font-size: 11px;
+}
+.stat-chip {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 6px;
+    -fx-padding: 4 10 4 10;
+}
+.stat-chip-value {
+    -fx-text-fill: rgba(255,255,255,0.88);
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.stat-chip-label {
+    -fx-text-fill: rgba(255,255,255,0.4);
+    -fx-font-size: 10px;
+}
+.item-slot-empty {
+    -fx-text-fill: rgba(255,255,255,0.18);
+    -fx-font-size: 18px;
+    -fx-min-width: 28px;
+    -fx-min-height: 28px;
+    -fx-alignment: center;
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 6px;
+}
+.achievement-badge {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to bottom, #ff4d5e, #d81b2c);
+    -fx-background-radius: 6px;
+    -fx-padding: 3 10 3 10;
+    -fx-effect: dropshadow(gaussian, rgba(255,77,94,0.45), 6, 0.3, 0, 0);
+}
+.achievement-empty {
+    -fx-text-fill: rgba(255,255,255,0.25);
+    -fx-font-size: 12px;
+    -fx-padding: 3 6 3 6;
+}
+.card-meta-line {
+    -fx-text-fill: rgba(255,255,255,0.42);
+    -fx-font-size: 11px;
+}
+.teammates-panel {
+    -fx-padding: 2 0 0 0;
+}
+.teammate-toggle {
+    -fx-background-color: rgba(38,198,218,0.14);
+    -fx-background-radius: 8px;
+    -fx-text-fill: #7de3f5;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 12 5 12;
+    -fx-cursor: hand;
+}
+.teammate-toggle:hover {
+    -fx-background-color: rgba(38,198,218,0.28);
+}
+.teammates-box {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 8px;
+    -fx-padding: 8;
+}
+.player-row {
+    -fx-padding: 2 0 2 0;
+}
+.player-avatar {
+    -fx-background-color: rgba(38,198,218,0.25);
+    -fx-background-radius: 999px;
+    -fx-text-fill: #7de3f5;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-min-width: 26px;
+    -fx-min-height: 26px;
+    -fx-alignment: center;
+}
+.player-name {
+    -fx-text-fill: rgba(255,255,255,0.72);
+    -fx-font-size: 11px;
+    -fx-text-overrun: ellipsis;
+}
+.player-kda {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+.team-row-win {
+    -fx-text-fill: #4dffa0;
+}
+.team-row-loss {
+    -fx-text-fill: #ff5d6c;
+}

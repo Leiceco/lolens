@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.lolens</groupId>
+        <artifactId>lolens</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>module-chat-status</artifactId>
+    <name>LoLens Module - Chat Status</name>
+    <description>在线状态自定义模块：连接 LCU 后自定义聊天状态/签名/段位展示。</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.lolens</groupId>
+            <artifactId>lolens-services</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
+</project>
