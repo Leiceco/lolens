@@ -25,3 +25,6 @@ Thumbs.db
 # 临时运行日志
 temp_run_err.txt
 temp_run_log.txt
+
+# Maven shade 中间产物
+dependency-reduced-pom.xml
